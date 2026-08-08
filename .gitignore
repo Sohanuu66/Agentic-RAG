@@ -1,0 +1,78 @@
+# =============================================================
+#  Ask My Docs — .gitignore
+# =============================================================
+
+# ── Secrets ──────────────────────────────────────────────────
+.env
+
+# ── Python ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+.Python
+
+# ── Node / Frontend ──────────────────────────────────────────
+node_modules/
+frontend/dist/
+frontend/build/
+.npm
+*.local
+
+# ── ChromaDB / runtime data (ignore indexes but keep corpus docs) ─────────
+data/chroma/
+data/ablation_chroma/
+backend/data/chroma/
+backend/data/ablation_chroma/
+
+# ── BM25 Index ───────────────────────────────────────────────
+*.pkl
+*.pickle
+
+# ── HuggingFace / Sentence-Transformers model cache ──────────
+.cache/
+backend/.cache/
+~/.cache/huggingface/
+
+# ── Evaluation results (generated, not source) ───────────────
+backend/evaluation/results/
+eval_results.json
+
+
+# ── Testing ──────────────────────────────────────────────────
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+
+# ── IDE / Editor ─────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Docker ───────────────────────────────────────────────────
+*.log
+
+# ── Planning docs (local only) ───────────────────────────────
+implementation_plan.md
+task.md
+
+# ── Misc ─────────────────────────────────────────────────────
+*.tmp
+*.bak
+
+multi-agent-rag-researcher/
+papermind-kg-rag/

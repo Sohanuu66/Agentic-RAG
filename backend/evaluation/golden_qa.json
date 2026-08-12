@@ -1,0 +1,802 @@
+[
+  {
+    "id": "q001",
+    "question": "What is the default encoding used by Python's open() function?",
+    "ground_truth": "The default encoding used by Python's open() function is platform-dependent, but typically UTF-8 on most modern systems. It is recommended to always specify the encoding explicitly.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q002",
+    "question": "How do you create a virtual environment in Python 3.12?",
+    "ground_truth": "You can create a virtual environment using the venv module: python -m venv <env_name>. This creates a directory with a self-contained Python installation.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q003",
+    "question": "What is the difference between a list and a tuple in Python?",
+    "ground_truth": "Lists are mutable sequences that can be modified after creation, while tuples are immutable sequences that cannot be changed. Lists use square brackets [] and tuples use parentheses ().",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q004",
+    "question": "What does the walrus operator := do in Python?",
+    "ground_truth": "The walrus operator := (assignment expression) allows you to assign a value to a variable as part of an expression. It was introduced in Python 3.8 and is useful in while loops and comprehensions.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q005",
+    "question": "What is a Python generator and how does it differ from a regular function?",
+    "ground_truth": "A Python generator is a function that uses the yield keyword to produce a sequence of values lazily, one at a time, rather than computing them all at once. Unlike regular functions that return once, generators can be resumed from where they left off.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q006",
+    "question": "How does Python's GIL (Global Interpreter Lock) affect multithreading?",
+    "ground_truth": "The GIL is a mutex that prevents multiple native threads from executing Python bytecodes simultaneously. This means Python threads cannot achieve true parallelism for CPU-bound tasks, but I/O-bound tasks can still benefit from threading.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q007",
+    "question": "What are Python decorators and how do you define one?",
+    "ground_truth": "Python decorators are functions that wrap another function to extend its behavior without modifying it. They use the @decorator_name syntax. A decorator is defined as a function that takes another function as argument and returns a modified function.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q008",
+    "question": "What is the purpose of __slots__ in Python classes?",
+    "ground_truth": "__slots__ allows you to explicitly state which instance attributes are allowed in a class. This saves memory by preventing the creation of a per-instance __dict__ and can speed up attribute access.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q009",
+    "question": "How does Python's asyncio event loop work?",
+    "ground_truth": "Python's asyncio event loop is a single-threaded mechanism that schedules and executes coroutines. It runs in a single thread and uses cooperative multitasking - coroutines yield control when they await I/O operations, allowing other coroutines to run.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q010",
+    "question": "What are Python dataclasses and what problem do they solve?",
+    "ground_truth": "Python dataclasses (introduced in Python 3.7 via the @dataclass decorator) automatically generate boilerplate methods like __init__, __repr__, and __eq__ for classes that primarily store data, reducing repetitive code.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q011",
+    "question": "What is attention mechanism in transformer models?",
+    "ground_truth": "The attention mechanism allows models to weigh the importance of different input tokens when producing each output token. Self-attention computes queries, keys, and values from the same input sequence, enabling the model to capture long-range dependencies.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q012",
+    "question": "What is the purpose of positional encoding in transformers?",
+    "ground_truth": "Positional encoding is added to the token embeddings in transformers to provide information about the position of each token in the sequence, since the attention mechanism itself is permutation-invariant and has no inherent notion of order.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q013",
+    "question": "What is gradient descent and how does it optimize neural networks?",
+    "ground_truth": "Gradient descent is an optimization algorithm that iteratively adjusts model parameters in the direction opposite to the gradient of the loss function. It minimizes the loss by taking small steps proportional to the negative gradient.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q014",
+    "question": "What is batch normalization and why is it used?",
+    "ground_truth": "Batch normalization normalizes the activations of each layer across a mini-batch, reducing internal covariate shift. It helps stabilize and speed up training, allows higher learning rates, and acts as a regularizer.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q015",
+    "question": "What is the difference between BERT and GPT architectures?",
+    "ground_truth": "BERT uses a bidirectional encoder that attends to all tokens simultaneously, making it better for understanding tasks. GPT uses a unidirectional (left-to-right) decoder for autoregressive generation, making it better for text generation tasks.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q016",
+    "question": "What is transfer learning in the context of deep learning?",
+    "ground_truth": "Transfer learning involves taking a model pre-trained on a large dataset and fine-tuning it on a smaller, task-specific dataset. This leverages learned representations, reducing training time and data requirements.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q017",
+    "question": "What is the vanishing gradient problem?",
+    "ground_truth": "The vanishing gradient problem occurs when gradients become extremely small as they are backpropagated through many layers, making it difficult for earlier layers to learn. It is particularly problematic for deep networks and was a key motivation for LSTMs and residual connections.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q018",
+    "question": "What is dropout regularization?",
+    "ground_truth": "Dropout is a regularization technique where randomly selected neurons are ignored during training with a probability p (the dropout rate). This prevents co-adaptation of neurons and acts as an ensemble method, reducing overfitting.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q019",
+    "question": "What is the softmax function and when is it used?",
+    "ground_truth": "The softmax function converts a vector of raw scores (logits) into a probability distribution by exponentiating each score and dividing by the sum of all exponentiated scores. It is used in the output layer of classification models.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q020",
+    "question": "What is the difference between overfitting and underfitting?",
+    "ground_truth": "Overfitting occurs when a model learns the training data too well, including noise, leading to poor generalization. Underfitting occurs when the model is too simple to capture the underlying patterns, resulting in high training and validation error.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q021",
+    "question": "How does Python handle memory management and garbage collection?",
+    "ground_truth": "Python uses reference counting as its primary memory management mechanism. When an object's reference count drops to zero, it is deallocated. Python also has a cyclic garbage collector to handle reference cycles that reference counting alone cannot handle.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q022",
+    "question": "What are Python metaclasses and how are they used?",
+    "ground_truth": "A metaclass is a class whose instances are classes. It is used to customize class creation. The default metaclass is 'type'. Custom metaclasses can intercept and modify class creation by inheriting from type and overriding __new__ or __init__.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q023",
+    "question": "What is the purpose of Python's __init__.py file?",
+    "ground_truth": "The __init__.py file marks a directory as a Python package, allowing it to be imported. It can be empty or contain initialization code for the package. In Python 3.3+, namespace packages allow packages without __init__.py.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q024",
+    "question": "What are context managers in Python and how do you implement one?",
+    "ground_truth": "Context managers are objects that define the runtime context for a 'with' statement. They implement __enter__ and __exit__ methods. The __enter__ method sets up the context and __exit__ handles cleanup, even if an exception occurs.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q025",
+    "question": "How does Python's import system work?",
+    "ground_truth": "Python's import system searches for modules in sys.path, which includes the script directory, PYTHONPATH, and installation-dependent default locations. It first checks sys.modules for cached modules, then searches finders and loaders in sys.meta_path.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q026",
+    "question": "What is RLHF (Reinforcement Learning from Human Feedback)?",
+    "ground_truth": "RLHF is a technique for training language models to align with human preferences. It involves fine-tuning a pre-trained model using human feedback as a reward signal, typically using a reward model trained on human comparisons and then PPO optimization.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q027",
+    "question": "What is the difference between precision and recall in information retrieval?",
+    "ground_truth": "Precision measures the fraction of retrieved documents that are relevant (true positives / total retrieved). Recall measures the fraction of relevant documents that were retrieved (true positives / total relevant). There is typically a precision-recall tradeoff.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q028",
+    "question": "What is BM25 and how does it score documents?",
+    "ground_truth": "BM25 (Best Match 25) is a probabilistic retrieval function that scores documents based on term frequency and inverse document frequency, with saturation for term frequency and normalization for document length. It is an improved variant of TF-IDF.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q029",
+    "question": "What is a knowledge graph and how is it used in NLP?",
+    "ground_truth": "A knowledge graph is a structured representation of knowledge as a graph of entities (nodes) and relationships (edges). In NLP, it is used for entity linking, relation extraction, question answering, and enriching language model outputs with structured knowledge.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q030",
+    "question": "What is the purpose of layer normalization in transformers?",
+    "ground_truth": "Layer normalization normalizes activations across the feature dimension rather than the batch dimension. In transformers it is applied after each sub-layer (attention, FFN) to stabilize training, reduce sensitivity to initialization, and improve convergence.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q031",
+    "question": "What are Python type hints and why are they useful?",
+    "ground_truth": "Type hints (introduced in Python 3.5 via PEP 484) allow developers to annotate the expected types of variables, function parameters, and return values. They improve code readability, enable static analysis tools like mypy, and help IDEs provide better autocomplete.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q032",
+    "question": "What is the difference between __str__ and __repr__ in Python?",
+    "ground_truth": "__repr__ is meant to return an unambiguous string representation of the object, ideally one that can be used to recreate it. __str__ is meant for a human-readable string representation. When you use print(), Python calls __str__ first.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q033",
+    "question": "How does Python's multiprocessing module differ from threading?",
+    "ground_truth": "The multiprocessing module creates separate processes with their own memory space and Python interpreter, bypassing the GIL and achieving true parallelism for CPU-bound tasks. Threading shares memory within a single process but is limited by the GIL for CPU work.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q034",
+    "question": "What is a cross-encoder and how does it differ from a bi-encoder?",
+    "ground_truth": "A cross-encoder takes a query-document pair as joint input and produces a relevance score, enabling deep interaction between tokens. A bi-encoder encodes query and document separately into dense vectors and computes similarity via dot product, making it much faster but less accurate.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q035",
+    "question": "What is sentence embedding and how is it computed?",
+    "ground_truth": "Sentence embedding is a dense vector representation of an entire sentence in a continuous semantic space. It is computed by passing a sentence through a language model and applying a pooling operation (e.g., mean pooling over token embeddings or using the [CLS] token).",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q036",
+    "question": "What is the transformer feed-forward network layer?",
+    "ground_truth": "Each transformer layer contains a position-wise feed-forward network (FFN) applied identically to each position. It consists of two linear transformations with a non-linear activation (typically ReLU or GELU) in between, expanding and then projecting the hidden dimension.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q037",
+    "question": "What is cosine similarity and how is it used in vector search?",
+    "ground_truth": "Cosine similarity measures the cosine of the angle between two vectors, ranging from -1 to 1. In vector search, it measures semantic similarity between query and document embeddings, where values close to 1 indicate high similarity regardless of vector magnitude.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q038",
+    "question": "What is RAG (Retrieval-Augmented Generation)?",
+    "ground_truth": "RAG is a technique that combines a retrieval system with a language model. Given a query, it first retrieves relevant documents from a knowledge base, then provides them as context to the language model to generate a grounded, factual answer.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q039",
+    "question": "What is the purpose of the CLS token in BERT?",
+    "ground_truth": "The [CLS] token is prepended to every input sequence in BERT. After passing through the transformer layers, the final hidden state of the [CLS] token serves as an aggregate sequence representation for classification tasks.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q040",
+    "question": "What is quantization in the context of language models?",
+    "ground_truth": "Quantization reduces the precision of model weights from high-precision floats (e.g., float32) to lower-precision formats (e.g., int8 or int4). This reduces memory requirements and speeds up inference with minimal accuracy loss.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q041",
+    "question": "What is the difference between supervised and unsupervised learning?",
+    "ground_truth": "Supervised learning trains models on labeled input-output pairs to learn a mapping function. Unsupervised learning finds patterns in unlabeled data without explicit guidance, using techniques like clustering, dimensionality reduction, or generative modeling.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q042",
+    "question": "What is FAISS and what is it used for?",
+    "ground_truth": "FAISS (Facebook AI Similarity Search) is a library for efficient similarity search and clustering of dense vectors. It is used to index millions of embeddings and perform approximate nearest neighbor (ANN) search at scale with low latency.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q043",
+    "question": "How does multi-head attention work in transformers?",
+    "ground_truth": "Multi-head attention runs multiple attention operations in parallel (h heads), each with learned linear projections of queries, keys, and values. The outputs are concatenated and projected back to the model dimension, allowing the model to attend to different representation subspaces.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q044",
+    "question": "What is LoRA (Low-Rank Adaptation) fine-tuning?",
+    "ground_truth": "LoRA is a parameter-efficient fine-tuning technique that freezes the pre-trained model weights and injects trainable low-rank decomposition matrices into each layer. This drastically reduces the number of trainable parameters while maintaining performance comparable to full fine-tuning.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q045",
+    "question": "What is the purpose of residual connections in neural networks?",
+    "ground_truth": "Residual connections (skip connections) add the input of a layer directly to its output, creating a shortcut path for gradients during backpropagation. They allow training of very deep networks by mitigating the vanishing gradient problem.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q046",
+    "question": "What is the difference between a parametric and non-parametric model?",
+    "ground_truth": "Parametric models have a fixed number of parameters regardless of training data size (e.g., linear regression, neural networks). Non-parametric models grow in complexity with the data (e.g., k-nearest neighbors, kernel methods, Gaussian processes).",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q047",
+    "question": "What is beam search in text generation?",
+    "ground_truth": "Beam search is a heuristic search algorithm for sequence generation that maintains a beam of the top-k most probable partial sequences at each step. It balances between greedy search (k=1) and exhaustive search, producing better outputs than greedy while being computationally tractable.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q048",
+    "question": "What is tokenization in NLP and what are common tokenization strategies?",
+    "ground_truth": "Tokenization splits text into smaller units (tokens) for model input. Common strategies include word-level, character-level, and subword tokenization. Modern LLMs use subword methods like BPE (Byte Pair Encoding) or WordPiece to balance vocabulary size and coverage.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q049",
+    "question": "What is named entity recognition (NER)?",
+    "ground_truth": "Named entity recognition is an NLP task that identifies and classifies named entities in text into predefined categories such as person names, organizations, locations, dates, and more. It is a token classification problem.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q050",
+    "question": "What is zero-shot learning in the context of language models?",
+    "ground_truth": "Zero-shot learning refers to the ability of a model to perform tasks it was not explicitly trained on, guided only by task instructions in the prompt. Large language models demonstrate zero-shot capabilities due to their broad pre-training.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q051",
+    "question": "What is few-shot prompting and why is it effective?",
+    "ground_truth": "Few-shot prompting provides a small number of input-output examples in the prompt to demonstrate the desired task format. It is effective because it activates relevant patterns learned during pre-training, helping the model generalize to the task without fine-tuning.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q052",
+    "question": "What is the difference between precision@k and NDCG in information retrieval?",
+    "ground_truth": "Precision@k measures the fraction of top-k retrieved results that are relevant, treating all relevant documents equally. NDCG (Normalized Discounted Cumulative Gain) accounts for the position of relevant documents in the ranked list and the degree of relevance, penalizing relevant items ranked lower.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q053",
+    "question": "What is chain-of-thought prompting?",
+    "ground_truth": "Chain-of-thought prompting encourages the model to reason step-by-step before producing a final answer by including examples with intermediate reasoning steps in the prompt. This significantly improves performance on complex reasoning tasks.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q054",
+    "question": "What is the temperature parameter in language model sampling?",
+    "ground_truth": "Temperature controls the randomness of language model output. Values below 1.0 make the distribution sharper and output more deterministic; values above 1.0 make it flatter and more random. Temperature 0 is equivalent to greedy decoding.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q055",
+    "question": "What is natural language inference (NLI)?",
+    "ground_truth": "NLI is the task of determining whether a hypothesis is entailed by, contradicts, or is neutral with respect to a premise. The three classes are typically: entailment, contradiction, and neutral. NLI models are used in fact-checking and hallucination detection.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q056",
+    "question": "What is the purpose of the Adam optimizer?",
+    "ground_truth": "Adam (Adaptive Moment Estimation) is an optimization algorithm that combines momentum (first moment of gradients) and RMSProp (second moment of gradients). It adapts the learning rate for each parameter individually, generally converging faster than SGD.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q057",
+    "question": "What is perplexity as a language model evaluation metric?",
+    "ground_truth": "Perplexity measures how well a language model predicts a sample of text. It is the exponentiated average negative log-likelihood per token. Lower perplexity indicates the model assigns higher probability to the test text and better captures the language.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q058",
+    "question": "What is the difference between in-context learning and fine-tuning?",
+    "ground_truth": "In-context learning adapts model behavior through examples in the prompt without updating model weights. Fine-tuning updates model weights on task-specific data. Fine-tuning produces a persistent specialized model, while in-context learning is ephemeral and prompt-dependent.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q059",
+    "question": "What is ChromaDB and how is it used?",
+    "ground_truth": "ChromaDB is an open-source vector database designed for AI applications. It stores embeddings alongside metadata and supports approximate nearest neighbor search. It is commonly used in RAG systems to store and query document chunk embeddings.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q060",
+    "question": "What is the BLEU score and what does it measure?",
+    "ground_truth": "BLEU (Bilingual Evaluation Understudy) measures the quality of machine-generated text by comparing n-gram overlap with reference translations. It is widely used for machine translation evaluation, though it has limitations in measuring semantic quality.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q061",
+    "question": "How does the choice of chunking strategy affect retrieval quality and what are the tradeoffs between fixed-size chunking and semantic chunking?",
+    "ground_truth": "Fixed-size chunking is fast and deterministic but may split coherent semantic units across chunks. Semantic chunking preserves topical coherence by detecting content boundaries, leading to better retrieval precision, but requires embedding computation and is slower. The optimal choice depends on document structure and query complexity.",
+    "expected_source_chunks": [],
+    "category": "multi_hop",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q062",
+    "question": "Explain how hybrid retrieval with RRF combines dense and sparse signals, and why this outperforms either method alone.",
+    "ground_truth": "Hybrid retrieval runs dense (vector) and sparse (BM25) search independently. Dense retrieval captures semantic similarity while BM25 excels at exact keyword matching. Reciprocal Rank Fusion (RRF) combines their ranked lists by summing 1/(k+rank) for each document across retrievers, rewarding documents that rank well in both. This outperforms either alone because some queries benefit more from exact match and others from semantic understanding.",
+    "expected_source_chunks": [],
+    "category": "multi_hop",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q063",
+    "question": "What is the relationship between the training objective of BERT and its effectiveness for sentence embeddings?",
+    "ground_truth": "BERT is trained with masked language modeling (MLM) and next sentence prediction (NSP). However, these objectives do not directly optimize for semantic sentence similarity. Sentence-BERT (SBERT) fine-tunes BERT with a siamese network on NLI and sentence similarity data to produce high-quality sentence embeddings suitable for semantic search.",
+    "expected_source_chunks": [],
+    "category": "multi_hop",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q064",
+    "question": "How does reranking improve the quality of RAG pipelines beyond initial retrieval?",
+    "ground_truth": "Initial retrieval (dense or sparse) operates at scale and uses approximate methods. A cross-encoder reranker takes the top-k retrieved candidates and jointly encodes each (query, document) pair to compute fine-grained relevance scores. This two-stage approach allows expensive but accurate scoring to be applied to a manageable candidate set, significantly improving the relevance of the final top-n results passed to the LLM.",
+    "expected_source_chunks": [],
+    "category": "multi_hop",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q065",
+    "question": "Why is hallucination detection important in RAG systems, and how does NLI-based detection work?",
+    "ground_truth": "Hallucination occurs when a language model generates information not supported by its input context. In RAG, this is dangerous because users trust cited answers. NLI-based detection splits the answer into individual claims and uses a Natural Language Inference model to check each claim against its cited context chunks, flagging contradictions and unsupported neutral claims. This provides fine-grained, interpretable detection without additional LLM calls.",
+    "expected_source_chunks": [],
+    "category": "multi_hop",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q066",
+    "question": "What is the relationship between context window size and the quality of RAG-generated answers?",
+    "ground_truth": "A larger context window allows more retrieved chunks to be passed to the LLM, increasing recall but also noise. Too much context can dilute the signal and increase latency and cost. Reranking helps by selecting the most relevant chunks from a large retrieval set, allowing a balance between recall (large retrieval top-k) and precision (small final context). Research shows 3-5 high-quality chunks often outperform 10-20 mediocre ones.",
+    "expected_source_chunks": [],
+    "category": "multi_hop",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q067",
+    "question": "How do RAGAS metrics collectively evaluate the quality of a RAG pipeline?",
+    "ground_truth": "RAGAS evaluates four dimensions: Faithfulness measures if the answer is grounded in the retrieved context; Answer Relevancy measures if the answer addresses the question; Context Precision measures if retrieved chunks are relevant to the question; Context Recall measures if all necessary information was retrieved. Together they identify weaknesses at each stage of the pipeline.",
+    "expected_source_chunks": [],
+    "category": "multi_hop",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q068",
+    "question": "Explain the relationship between tokenization, vocabulary size, and model performance in transformer LLMs.",
+    "ground_truth": "Vocabulary size affects the trade-off between sequence length and representational granularity. Larger vocabularies mean fewer tokens per sequence (shorter context) but require larger embedding matrices. Subword tokenization (BPE, WordPiece) balances this by representing common words as single tokens and rare words as subword pieces, enabling both efficiency and coverage across languages and domains.",
+    "expected_source_chunks": [],
+    "category": "multi_hop",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q069",
+    "question": "How does fine-tuning interact with in-context learning ability, and what is catastrophic forgetting?",
+    "ground_truth": "Fine-tuning on a narrow task can degrade the model's general capabilities and in-context learning ability, a phenomenon called catastrophic forgetting. Techniques like LoRA, elastic weight consolidation (EWC), and instruction tuning on diverse data help preserve general abilities while adapting to specific tasks.",
+    "expected_source_chunks": [],
+    "category": "multi_hop",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q070",
+    "question": "What are the trade-offs between using a local NLI model versus an LLM-as-judge for hallucination detection?",
+    "ground_truth": "Local NLI models are fast (~50ms/claim), free, run offline, and produce structured entailment/contradiction/neutral labels. LLM-as-judge is more flexible and handles nuanced claims better but costs API credits, has higher latency, and may itself hallucinate. For production use, NLI provides a reliable first pass; LLM-as-judge can be reserved for borderline cases.",
+    "expected_source_chunks": [],
+    "category": "multi_hop",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q071",
+    "question": "How does sentence-window chunking improve context quality for generation?",
+    "ground_truth": "Sentence-window chunking creates small units (1-3 sentences) for precise retrieval, but stores a larger surrounding context window (e.g., ±2 sentences) in the chunk metadata. When a small chunk is retrieved, the LLM receives the full window as context. This improves generation quality because the answer often depends on surrounding sentences while retrieval benefits from smaller, focused units.",
+    "expected_source_chunks": [],
+    "category": "multi_hop",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q072",
+    "question": "What is the role of the system prompt in citation-grounded generation and how should it be structured?",
+    "ground_truth": "The system prompt in citation-grounded generation constrains the LLM to answer only from provided context chunks, return a structured JSON output with answer and citations, explicitly cite chunk IDs for each claim, and say 'I don't know' when the context is insufficient. A well-structured system prompt is critical for controlling LLM behavior and preventing hallucinations.",
+    "expected_source_chunks": [],
+    "category": "multi_hop",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q073",
+    "question": "How does ablation study methodology apply to evaluating RAG pipeline configurations?",
+    "ground_truth": "Ablation studies systematically disable or modify individual components to measure their contribution. In RAG, this means running the same evaluation benchmark across configurations that vary one dimension at a time: chunking strategy, retrieval method, reranking, etc. By comparing RAGAS scores across configurations, you can identify which components contribute most to performance.",
+    "expected_source_chunks": [],
+    "category": "multi_hop",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q074",
+    "question": "Why is it important to have a golden Q&A dataset for evaluating RAG systems, and what should it contain?",
+    "ground_truth": "A golden dataset provides a reproducible, controlled evaluation benchmark. It should include diverse question types: single-chunk factual questions to test retrieval precision, multi-chunk reasoning questions to test context aggregation, and unanswerable questions to test the system's ability to abstain. Without it, evaluation is ad-hoc and unreproducible.",
+    "expected_source_chunks": [],
+    "category": "multi_hop",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q075",
+    "question": "How does the two-tower model architecture differ from a cross-encoder for retrieval, and when would you use each?",
+    "ground_truth": "A two-tower (bi-encoder) model encodes queries and documents independently into a shared embedding space, enabling offline indexing and fast ANN search at scale. A cross-encoder jointly encodes query-document pairs for high-accuracy relevance scoring but requires runtime computation for each pair. The standard approach is bi-encoder for first-stage retrieval and cross-encoder for reranking a small candidate set.",
+    "expected_source_chunks": [],
+    "category": "multi_hop",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q076",
+    "question": "What are the key considerations when designing an evaluation pipeline for a RAG system used in production?",
+    "ground_truth": "Key considerations include: a representative golden dataset covering diverse question types, automated metrics (RAGAS faithfulness, relevancy, precision, recall), regression gating against a baseline to prevent performance degradation, latency measurement, cost tracking, and periodic re-evaluation as the corpus or models change. CI integration ensures every code change is evaluated.",
+    "expected_source_chunks": [],
+    "category": "multi_hop",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q077",
+    "question": "How does the choice of embedding model affect downstream retrieval performance and what factors should guide the selection?",
+    "ground_truth": "The embedding model determines the quality of semantic similarity calculations. Key factors include: model performance on retrieval benchmarks (MTEB), domain alignment with the corpus, embedding dimensionality (affects memory and speed), inference speed, and whether the model supports asymmetric retrieval (different encoders for query and document). Smaller models like all-MiniLM-L6-v2 trade accuracy for speed.",
+    "expected_source_chunks": [],
+    "category": "multi_hop",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q078",
+    "question": "What is the role of document metadata in improving RAG retrieval and generation quality?",
+    "ground_truth": "Document metadata (source file, page number, section heading, creation date) enriches chunk storage and retrieval. In retrieval it enables metadata filtering (e.g., filter by document type or date range). In generation it enables precise citations pointing to the exact source location. Rich metadata also supports better hallucination detection by grounding claims to specific source positions.",
+    "expected_source_chunks": [],
+    "category": "multi_hop",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q079",
+    "question": "How do chunking overlap and chunk size affect the precision-recall tradeoff in retrieval?",
+    "ground_truth": "Smaller chunks with higher overlap improve recall by ensuring no information falls entirely between chunks, but reduce precision because each chunk contains less unique content. Larger chunks improve precision and context per retrieval but risk missing targeted facts. Overlap ensures continuity across boundaries, preserving context that would otherwise be split.",
+    "expected_source_chunks": [],
+    "category": "multi_hop",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q080",
+    "question": "What is the difference between lexical and semantic search, and why do modern RAG systems use both?",
+    "ground_truth": "Lexical search (BM25) matches documents based on exact keyword overlap and is robust for precise terminology, rare words, and proper nouns. Semantic search uses dense embeddings to match by meaning, handling synonyms and paraphrases. RAG systems use hybrid search because queries sometimes need exact matches and sometimes need semantic understanding, and fusing both signals consistently outperforms either alone.",
+    "expected_source_chunks": [],
+    "category": "multi_hop",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q081",
+    "question": "What is the boiling point of mercury on Mars?",
+    "ground_truth": "I don't have enough information to answer this question from the provided documents.",
+    "expected_source_chunks": [],
+    "category": "unanswerable",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q082",
+    "question": "What is the exact line count of the CPython 3.12 source code?",
+    "ground_truth": "I don't have enough information to answer this question from the provided documents.",
+    "expected_source_chunks": [],
+    "category": "unanswerable",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q083",
+    "question": "Who wrote the original Python documentation for version 3.12?",
+    "ground_truth": "I don't have enough information to answer this specific question from the provided documents.",
+    "expected_source_chunks": [],
+    "category": "unanswerable",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q084",
+    "question": "What is the internal architecture of the Groq LPU chip?",
+    "ground_truth": "I don't have enough information to answer this question from the provided documents.",
+    "expected_source_chunks": [],
+    "category": "unanswerable",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q085",
+    "question": "What is the revenue of OpenAI in 2025?",
+    "ground_truth": "I don't have enough information to answer this question from the provided documents.",
+    "expected_source_chunks": [],
+    "category": "unanswerable",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q086",
+    "question": "What is the exact number of parameters in LLaMA 3.3 70B?",
+    "ground_truth": "I don't have enough information to answer this precise question from the provided documents.",
+    "expected_source_chunks": [],
+    "category": "unanswerable",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q087",
+    "question": "What is Guido van Rossum's favorite Python version?",
+    "ground_truth": "I don't have enough information to answer this question from the provided documents.",
+    "expected_source_chunks": [],
+    "category": "unanswerable",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q088",
+    "question": "When exactly was the DeBERTa-v3 model trained?",
+    "ground_truth": "I don't have enough information to answer this specific question from the provided documents.",
+    "expected_source_chunks": [],
+    "category": "unanswerable",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q089",
+    "question": "What is the carbon footprint of training GPT-4?",
+    "ground_truth": "I don't have enough information to answer this question from the provided documents.",
+    "expected_source_chunks": [],
+    "category": "unanswerable",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q090",
+    "question": "What is the salary of a Python developer at Google?",
+    "ground_truth": "I don't have enough information to answer this question from the provided documents.",
+    "expected_source_chunks": [],
+    "category": "unanswerable",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q091",
+    "question": "What is the difference between Python's asyncio.gather and asyncio.wait?",
+    "ground_truth": "asyncio.gather runs multiple coroutines concurrently and returns their results as a list in the same order. asyncio.wait returns two sets (done, pending) and offers more control with when= parameter (e.g., FIRST_COMPLETED). gather is simpler; wait is better when you need partial results or timeouts.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q092",
+    "question": "What is the purpose of Python's __all__ variable in a module?",
+    "ground_truth": "__all__ is a list that explicitly defines what names are exported when someone does 'from module import *'. Without __all__, all names not starting with underscore are exported. It is a best practice for library authors to control their public API.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q093",
+    "question": "What is the difference between shallow copy and deep copy in Python?",
+    "ground_truth": "A shallow copy creates a new object but references the same nested objects as the original. A deep copy creates a completely independent copy of the object and all nested objects. Use copy.copy() for shallow and copy.deepcopy() for deep copies.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q094",
+    "question": "What is Python's Protocol class and how does it enable structural subtyping?",
+    "ground_truth": "Protocol (from typing module, PEP 544) enables structural subtyping (duck typing with static checking). A class satisfies a Protocol if it implements the required methods and attributes, without needing explicit inheritance. This allows static type checkers to validate interfaces without inheritance coupling.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q095",
+    "question": "How do Python f-strings work and what are their performance advantages?",
+    "ground_truth": "F-strings (formatted string literals, PEP 498) evaluate expressions embedded in curly braces at runtime. They are faster than format() and % formatting because they are evaluated as expressions at parse time rather than via string parsing at runtime, resulting in fewer function calls and less overhead.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "easy"
+  },
+  {
+    "id": "q096",
+    "question": "What is the difference between top-p (nucleus) and top-k sampling in language model decoding?",
+    "ground_truth": "Top-k sampling selects from the k most probable next tokens. Top-p (nucleus) sampling selects from the smallest set of tokens whose cumulative probability exceeds p. Top-p is more adaptive since the number of candidates varies with the distribution shape, avoiding both too few (peaked distributions) and too many (flat distributions) candidates.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q097",
+    "question": "What is instruction tuning and how does it differ from standard supervised fine-tuning?",
+    "ground_truth": "Instruction tuning fine-tunes a language model on diverse tasks formatted as natural language instructions with expected outputs. Unlike standard SFT which trains on task-specific data, instruction tuning uses many different task types to improve the model's ability to follow novel instructions in zero-shot settings.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q098",
+    "question": "What is the MAP (Mean Average Precision) metric in information retrieval?",
+    "ground_truth": "MAP is the mean of Average Precision (AP) scores across queries. AP for a single query is the average of precision values at ranks where relevant documents appear, weighted by recall. MAP summarizes retrieval quality across a test set, rewarding systems that rank relevant documents highly.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "hard"
+  },
+  {
+    "id": "q099",
+    "question": "What is the PageRank algorithm and how does it relate to link analysis?",
+    "ground_truth": "PageRank assigns importance scores to web pages based on the number and quality of links pointing to them. A page is important if many important pages link to it. The score is computed iteratively as the stationary distribution of a random walk on the web graph.",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "medium"
+  },
+  {
+    "id": "q100",
+    "question": "What is dense passage retrieval (DPR) and how does it train the query and document encoders?",
+    "ground_truth": "DPR (Dense Passage Retrieval) trains two separate BERT encoders for queries and passages using in-batch negatives and hard negatives. The training objective is to maximize dot product similarity for positive (query, passage) pairs and minimize it for negatives, using a contrastive loss (typically NTXent or binary cross-entropy).",
+    "expected_source_chunks": [],
+    "category": "factual",
+    "difficulty": "hard"
+  }
+]

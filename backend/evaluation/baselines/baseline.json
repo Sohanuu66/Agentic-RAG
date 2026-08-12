@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-07-15T12:00:00+00:00",
+  "note": "Manually degraded result for smoke-testing check_regression.py",
+  "config": {
+    "embedding_model": "all-MiniLM-L6-v2",
+    "llm_model": "llama-3.3-70b-versatile",
+    "reranker_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "retrieval_top_k": 20,
+    "rerank_top_n": 5,
+    "rrf_k": 60,
+    "num_questions": 10
+  },
+  "aggregate_scores": {
+    "faithfulness": 0.72,
+    "answer_relevancy": 0.68,
+    "context_precision": 0.71,
+    "context_recall": 0.66
+  },
+  "elapsed_seconds": 45.2,
+  "per_question": []
+}

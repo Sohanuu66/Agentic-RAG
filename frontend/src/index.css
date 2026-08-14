@@ -1,0 +1,289 @@
+/* ============================================================
+   Ask My Docs — Global Design System
+   Dark theme · Inter font · CSS custom properties
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── Color tokens ─────────────────────────────────────────── */
+:root {
+  /* Base */
+  --bg-0:        #0a0b0e;   /* deepest background */
+  --bg-1:        #111318;   /* surface */
+  --bg-2:        #181c24;   /* elevated card */
+  --bg-3:        #1f2430;   /* input / code bg */
+  --bg-4:        #262d3d;   /* hover */
+
+  /* Brand gradient — electric indigo → cyan */
+  --brand-0:     #6366f1;   /* indigo */
+  --brand-1:     #818cf8;   /* indigo light */
+  --brand-2:     #22d3ee;   /* cyan */
+  --brand-grad:  linear-gradient(135deg, #6366f1 0%, #22d3ee 100%);
+
+  /* Text */
+  --text-0:      #f1f5f9;   /* primary */
+  --text-1:      #94a3b8;   /* secondary */
+  --text-2:      #64748b;   /* muted */
+  --text-inv:    #0a0b0e;   /* on-brand buttons */
+
+  /* Semantic */
+  --success:     #10b981;
+  --warning:     #f59e0b;
+  --danger:      #ef4444;
+  --info:        #38bdf8;
+
+  /* Borders */
+  --border:      rgba(255,255,255,0.07);
+  --border-med:  rgba(255,255,255,0.12);
+  --border-hi:   rgba(255,255,255,0.20);
+
+  /* Glow */
+  --glow-brand:  0 0 32px rgba(99,102,241,0.25);
+  --glow-cyan:   0 0 24px rgba(34,211,238,0.20);
+
+  /* Radius */
+  --r-sm:  6px;
+  --r-md:  10px;
+  --r-lg:  16px;
+  --r-xl:  24px;
+
+  /* Transitions */
+  --t-fast:  0.15s ease;
+  --t-med:   0.25s ease;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ── Reset ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-0);
+  color: var(--text-0);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: var(--brand-1); text-decoration: none; }
+a:hover { color: var(--brand-2); }
+
+/* ── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-1); }
+::-webkit-scrollbar-thumb { background: var(--bg-4); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-2); }
+
+/* ── Layout utilities ────────────────────────────────────── */
+.flex        { display: flex; }
+.flex-col    { flex-direction: column; }
+.flex-1      { flex: 1; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-2       { gap: 8px; }
+.gap-3       { gap: 12px; }
+.gap-4       { gap: 16px; }
+.w-full      { width: 100%; }
+
+/* ── Card ────────────────────────────────────────────────── */
+.card {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 20px;
+  transition: border-color var(--t-fast);
+}
+.card:hover { border-color: var(--border-med); }
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: var(--r-md);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all var(--t-fast);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--brand-grad);
+  color: white;
+  box-shadow: 0 2px 12px rgba(99,102,241,0.35);
+}
+.btn-primary:hover {
+  opacity: 0.9;
+  box-shadow: 0 4px 20px rgba(99,102,241,0.50);
+  transform: translateY(-1px);
+}
+.btn-primary:active { transform: translateY(0); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-1);
+  border: 1px solid var(--border-med);
+}
+.btn-ghost:hover { background: var(--bg-3); color: var(--text-0); border-color: var(--border-hi); }
+
+.btn-danger {
+  background: rgba(239,68,68,0.15);
+  color: var(--danger);
+  border: 1px solid rgba(239,68,68,0.3);
+}
+.btn-danger:hover { background: rgba(239,68,68,0.25); }
+
+.btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none !important; }
+
+/* ── Inputs ──────────────────────────────────────────────── */
+.input {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  color: var(--text-0);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  padding: 10px 14px;
+  width: 100%;
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+  outline: none;
+}
+.input:focus {
+  border-color: var(--brand-0);
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.18);
+}
+.input::placeholder { color: var(--text-2); }
+
+select.input { cursor: pointer; }
+
+/* ── Badge ───────────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.badge-ok      { background: rgba(16,185,129,0.15); color: var(--success); }
+.badge-warn    { background: rgba(245,158,11,0.15); color: var(--warning); }
+.badge-danger  { background: rgba(239,68,68,0.15);  color: var(--danger);  }
+.badge-info    { background: rgba(56,189,248,0.15); color: var(--info);    }
+.badge-neutral { background: var(--bg-4); color: var(--text-1); }
+
+/* ── Spinner ─────────────────────────────────────────────── */
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinner {
+  width: 18px; height: 18px;
+  border: 2px solid var(--border-med);
+  border-top-color: var(--brand-1);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+/* ── Skeleton ────────────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position:  400px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--bg-3) 25%, var(--bg-4) 50%, var(--bg-3) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--r-sm);
+}
+
+/* ── Divider ─────────────────────────────────────────────── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+/* ── Toast notifications ─────────────────────────────────── */
+@keyframes slideIn {
+  from { transform: translateX(110%); opacity: 0; }
+  to   { transform: translateX(0);   opacity: 1; }
+}
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.toast {
+  background: var(--bg-2);
+  border: 1px solid var(--border-med);
+  border-radius: var(--r-md);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  animation: slideIn 0.3s ease;
+  min-width: 260px;
+  max-width: 380px;
+}
+.toast-success { border-left: 3px solid var(--success); }
+.toast-error   { border-left: 3px solid var(--danger);  }
+.toast-info    { border-left: 3px solid var(--brand-1); }
+
+/* ── Code blocks ─────────────────────────────────────────── */
+code, pre {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+code {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 5px;
+  color: var(--brand-2);
+}
+pre {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 16px;
+  overflow-x: auto;
+}
+
+/* ── Typography helpers ──────────────────────────────────── */
+.text-sm   { font-size: 0.8rem; }
+.text-muted { color: var(--text-2); }
+.text-secondary { color: var(--text-1); }
+.font-mono { font-family: var(--font-mono); }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+
+/* ── Gradient text ───────────────────────────────────────── */
+.gradient-text {
+  background: var(--brand-grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── App shell ───────────────────────────────────────────── */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
